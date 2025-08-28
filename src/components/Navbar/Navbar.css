@@ -1,0 +1,31 @@
+/* خلفية navbar فاتحة */
+.custom-navbar {
+  background-color: #ffffff; /* أبيض */
+  height: 60px;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+/* اسم البورتفوليو */
+.navbar-brand {
+  color: #0d6efd !important; /* أزرق */
+  font-size: 20px;
+}
+
+/* اللينكات */
+.nav-link {
+  margin-left: 12px;
+  color: #333 !important; /* رمادي غامق */
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+/* عند الـ hover */
+.nav-link:hover {
+  color: #0dcaf0 !important; /* فيروزي */
+}
+
+/* يخلي المحتوى ما يغطيش الـ navbar */
+body {
+  padding-top: 60px;
+}
