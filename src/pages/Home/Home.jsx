@@ -6,29 +6,21 @@ import Projects from "../Projects/Projects";
 import Contact from "../Contact/Contact";
 
 function Home() {
-  // Observer للـ fade-in عند Scroll
   useEffect(() => {
     const sections = document.querySelectorAll("section");
-    const observer = new IntersectionObserver((entries) => {
+    const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
-        if(entry.isIntersecting){
-          entry.target.classList.add("fade-in");
-        }
+        if(entry.isIntersecting) entry.target.classList.add("fade-in");
       });
     }, { threshold: 0.2 });
-
     sections.forEach(section => observer.observe(section));
   }, []);
 
   return (
     <>
-      <section className="home">
-        <div className="container home-content text-center">
-          <img 
-            src={sampleImg} 
-            alt="Mahmoud Mostafa" 
-            className="profile-img"
-          />
+      <section className="home" id="home">
+        <div className="home-content">
+          <img src={sampleImg} alt="Mahmoud Mostafa" className="profile-img"/>
           <h1 className="home-title">Hi, I'm <span>Mahmoud Mostafa</span></h1>
           <h3 className="home-subtitle">Frontend Developer</h3>
           <p className="home-desc">
@@ -41,17 +33,9 @@ function Home() {
         </div>
       </section>
 
-      <section id="about">
-        <About />
-      </section>
-
-      <section id="projects">
-        <Projects />
-      </section>
-
-      <section id="contact">
-        <Contact />
-      </section>
+      <section id="about"><About /></section>
+      <section id="projects"><Projects /></section>
+      <section id="contact"><Contact /></section>
     </>
   );
 }

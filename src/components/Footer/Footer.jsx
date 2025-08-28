@@ -10,13 +10,8 @@ function Footer() {
           <a href="mailto:Mahmoudkhayal81@gmail.com"> Mahmoudkhayal81@gmail.com</a>
         </p>
         <p className="footer-links">
-          <a href="https://linkedin.com/in/mahmoud-mostafa81" target="_blank" rel="noreferrer">
-            LinkedIn
-          </a>
-          |
-          <a href="https://github.com/Mahmoudkhayal81" target="_blank" rel="noreferrer">
-            GitHub
-          </a>
+          <a href="https://linkedin.com/in/mahmoud-mostafa81" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a href="https://github.com/Mahmoudkhayal81" target="_blank" rel="noreferrer">GitHub</a>
         </p>
         <p className="footer-copy">© {new Date().getFullYear()} Mahmoud Mostafa. All Rights Reserved.</p>
       </div>

@@ -14,19 +14,19 @@ body {
   background-size: 400% 400%;
   animation: gradientMove 15s ease infinite;
   color: #fff;
-  /* min-height: 100vh;  ← إزالة أو تعديل */
-  min-height: 80vh; /* أصبح أصغر من كامل الشاشة */
+  min-height: 80vh; /* أقل من كامل الشاشة */
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 40px 20px; /* تقليل البادينج */
   text-align: center;
+  border-radius: 8px;
 }
 
 @keyframes gradientMove {
-  0% {background-position: 0% 50%;}
-  50% {background-position: 100% 50%;}
-  100% {background-position: 0% 50%;}
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 .home-content {
@@ -42,24 +42,13 @@ body {
   object-fit: cover;
   border: 4px solid #fff;
   margin-bottom: 20px;
-  box-shadow: 0px 4px 15px rgba(0,0,0,0.3);
   transition: transform 0.4s ease, box-shadow 0.4s ease;
+  box-shadow: none; /* بدون أي بروز */
 }
 
 .profile-img:hover {
   transform: scale(1.1);
-  box-shadow: 0px 8px 25px rgba(0,0,0,0.4);
-}
-
-/* ===== تكبير الصورة حسب حجم الشاشة ===== */
-@media (min-width: 1200px) {
-  .profile-img { width: 200px; height: 200px; }
-}
-@media (min-width: 768px) and (max-width: 1199px) {
-  .profile-img { width: 180px; height: 180px; }
-}
-@media (max-width: 767px) {
-  .profile-img { width: 130px; height: 130px; }
+  box-shadow: 0px 8px 25px rgba(0,0,0,0.2); /* ظل خفيف عند hover فقط */
 }
 
 /* ===== Home Text ===== */
@@ -97,7 +86,8 @@ body {
   padding: 12px 25px;
   font-size: 15px;
   border-radius: 25px;
-  transition: transform 0.3s, box-shadow 0.3s, background 0.3s, color 0.3s;
+  transition: transform 0.3s, background 0.3s, color 0.3s;
+  box-shadow: none; /* بدون أي بروز */
 }
 
 .home-buttons .btn-primary {
@@ -108,7 +98,6 @@ body {
 
 .home-buttons .btn-primary:hover {
   transform: translateY(-3px);
-  box-shadow: 0px 8px 20px rgba(0,0,0,0.3);
 }
 
 .home-buttons .btn-outline-light {
@@ -122,10 +111,23 @@ body {
   transform: translateY(-3px);
 }
 
-/* ===== Section Backgrounds ===== */
-#about { background-color: #f8f9fa; color: #333; padding: 80px 20px; }
-#projects { background-color: #e9ecef; color: #333; padding: 80px 20px; }
-#contact { background-color: #dee2e6; color: #333; padding: 80px 20px; }
+/* ===== Other Sections ===== */
+#about {
+  background-color: #f8f9fa;
+  color: #333;
+  padding: 80px 20px;
+  border-radius: 8px;
+}
+
+#about, #projects, #contact {
+  padding: 50px 20px;  /* تقليل البادينج العلوي والسفلي */
+  max-width: 1100px;
+  margin: 10px auto;   /* تقليل المسافة بين الأقسام */
+  text-align: center;
+  border-radius: 8px;
+  background-color: #f8f9fa;
+  color: #333;
+}
 
 /* ===== Fade-in ===== */
 section {
@@ -137,12 +139,4 @@ section {
 section.fade-in {
   opacity: 1;
   transform: translateY(0);
-}
-
-/* ===== Section Titles ===== */
-.section-title {
-  text-align: center;
-  font-size: 28px;
-  margin-bottom: 30px;
-  font-weight: 700;
 }
